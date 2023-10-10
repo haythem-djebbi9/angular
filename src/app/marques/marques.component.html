@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card shadow mb-4">
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Prix</th>
+              <th>Date Création</th>
+              <th>Slogan</th>
+              <th>Secteur d'activité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let marque of marques">
+              <td>{{ marque.idMarque }}</td>
+              <td>{{ marque.nomMarque }}</td>
+              <td>{{ marque.chiffreaffaire }}</td>
+              <td>{{ marque.dateValidation | date:'dd/MM/yyyy' }}</td>
+              <td>{{ marque.slogan }}</td>
+              <td>{{ marque.secteurActivite }}</td>
+              <td><a class="btn btn-danger" (click)="supprimerMarque(marque)">Supprimer</a></td>
+              <td><a class="btn btn-success" [routerLink]="['/updateMarque',marque.idMarque]">Modifier</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
